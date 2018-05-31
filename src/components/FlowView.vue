@@ -14,6 +14,7 @@
 </template>
 
 <script>
+// TODO: make component reactive by adding a watcher on the 'diagram'
 import BpmnViewer from 'bpmn-js'
 export default {
   name: 'FlowView',
