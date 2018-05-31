@@ -1,0 +1,51 @@
+<template>
+  <div id="flowview">
+    <h1>{{ fileName }}</h1>
+    <input
+      id="input"
+      ref="inputRef"
+      type="file"
+      @change="loadDiagram">
+    <div id="aggregated-workflow"></div>
+    <p>
+      <a href="/#/">Home</a>
+    </p>
+  </div>
+</template>
+
+<script>
+import BpmnViewer from 'bpmn-js'
+export default {
+  name: 'FlowView',
+  data () {
+    return {
+      fileName: '',
+      diagram: null
+    }
+  },
+  methods: {
+    loadDiagram: function () {
+      const diagrams = this.$refs.inputRef.files
+      this.fileName = diagrams[0].name
+
+      var reader = new FileReader()
+
+      reader.onload = (event) => {
+        const viewer = new BpmnViewer({ container: '#aggregated-workflow' })
+        this.diagram = event.target.result
+        viewer.importXML(this.diagram, function (err) {
+          if (!err) {
+            // console.log('Loaded ' + diagrams[0].name + ' successfully')
+            viewer.get('aggregated-workflow').zoom('fit-viewport')
+          }
+        })
+      }
+
+      reader.readAsText(diagrams[0])
+    }
+  }
+}
+</script>
+
+<style>
+</style>
