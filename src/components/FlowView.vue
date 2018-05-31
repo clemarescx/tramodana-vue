@@ -19,6 +19,7 @@ export default {
   name: 'FlowView',
   data () {
     return {
+      viewer: null,
       fileName: '',
       diagram: null
     }
@@ -31,12 +32,15 @@ export default {
       var reader = new FileReader()
 
       reader.onload = (event) => {
-        const viewer = new BpmnViewer({ container: '#aggregated-workflow' })
+        if (this.viewer) {
+          this.viewer.destroy()
+        }
+        this.viewer = new BpmnViewer({ container: '#aggregated-workflow' })
         this.diagram = event.target.result
-        viewer.importXML(this.diagram, function (err) {
+        this.viewer.importXML(this.diagram, function (err) {
           if (!err) {
             // console.log('Loaded ' + diagrams[0].name + ' successfully')
-            viewer.get('aggregated-workflow').zoom('fit-viewport')
+            this.viewer.get('aggregated-workflow').zoom('fit-viewport')
           }
         })
       }
