@@ -26,7 +26,11 @@ export default {
     }
   },
   mounted: function () {
-    this.viewer = new BpmnViewer({ container: '#aggregated-workflow' })
+    this.viewer = new BpmnViewer({
+      container: '#aggregated-workflow',
+      width: '100%',
+      height: '100%'
+    })
   },
   methods: {
     loadDiagram: function () {
@@ -50,5 +54,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#aggregated-workflow {
+  border: 0.2em solid green;
+  width: 50%;
+  height: 400px;
+  overflow: auto;
+  margin: 0 auto;
+
+}
 </style>
