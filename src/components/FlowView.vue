@@ -12,7 +12,8 @@
     <div id="selectable-view">
       <file-selector
         id="selector"
-        :file-list="exampleDiagrams"></file-selector>
+        :file-list="exampleDiagrams"
+        @filename-selected="onFileNameSelected"/>
       <div id="renderer"></div>
     </div>
     <p>
@@ -65,6 +66,10 @@ export default {
     })
   },
   methods: {
+    onFileNameSelected: function (event) {
+      // eslint-disable-next-line
+      console.log("Selector event received: " + event)
+    },
     loadDiagram: function () {
       const diagrams = this.$refs.inputRef.files
 

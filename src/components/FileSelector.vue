@@ -1,9 +1,12 @@
 <template>
   <select
+    v-model="filename"
     size="3"
-    name="Diagrams">
+    name="Diagrams"
+    @change="$emit('filename-selected',filename)">
     <option
       v-for="file in fileList"
+      :value="file.name"
       :key="file.name"> {{ file.name }}
     </option>
   </select>
@@ -17,6 +20,11 @@ export default {
     fileList: {
       type: Array,
       default: () => []
+    }
+  },
+  data: function () {
+    return {
+      filename: ''
     }
   }
 }
