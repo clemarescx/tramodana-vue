@@ -69,6 +69,19 @@ export default {
     onFileNameSelected: function (event) {
       // eslint-disable-next-line
       console.log("Selector event received: " + event)
+      var xhttp = new XMLHttpRequest()
+      xhttp.onreadystatechange = () => {
+        if (this.readyState === 4 && this.status === 200) {
+          this.diagram = this.responseText
+          this.viewer.importXML(this.diagram, function (err) {
+            if (!err) {
+              this.viewer.get('renderer').zoom('fit-viewport')
+            }
+          })
+        }
+      }
+      xhttp.open('GET', '../../resources/get_books_memberships/' + event, true)
+      xhttp.send()
     },
     loadDiagram: function () {
       const diagrams = this.$refs.inputRef.files
