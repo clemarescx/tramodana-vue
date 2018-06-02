@@ -2,6 +2,7 @@
   <div id="flowview">
     <h1>Select a workflow diagram</h1>
     <div>
+      <button @click="test"> test </button>
       <input
         id="input"
         ref="inputRef"
@@ -32,7 +33,7 @@ export default {
   components: {
     FileSelector
   },
-  data () {
+  data() {
     return {
       exampleDiagrams: [],
       viewer: null,
@@ -41,9 +42,11 @@ export default {
     }
   },
   watch: {
-    diagram: function (oldDiag, newDiag) {
+    diagram: function(oldDiag, newDiag) {
+      if (oldDiag !== newDiag) {
       // eslint-disable-next-line
-      if (oldDiag !== newDiag) { console.log('new diagram displayed: ' + this.fileName) }
+        console.log('new diagram displayed: ' + this.fileName)
+      }
 
       /*
         this.viewer.importXML(newDiag, function (err) {
@@ -54,11 +57,11 @@ export default {
         */
     }
   },
-  created: function () {
+  created: function() {
     var query = new QueryAPI()
     this.exampleDiagrams = query.getDiagramFileNames()
   },
-  mounted: function () {
+  mounted: function() {
     this.viewer = new BpmnViewer({
       container: '#renderer',
       width: '100%',
@@ -66,34 +69,58 @@ export default {
     })
   },
   methods: {
-    onFileNameSelected: function (event) {
+    test: function() {
       // eslint-disable-next-line
-      console.log("Selector event received: " + event)
-      var xhttp = new XMLHttpRequest()
-      xhttp.onreadystatechange = () => {
+      console.log("test clicked")
+      // const self = this
+      const xhttp = new XMLHttpRequest()
+      xhttp.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
-          this.diagram = this.responseText
-          this.viewer.importXML(this.diagram, function (err) {
+          this.diagram = JSON.parse(this.responseText).value
+          // eslint-disable-next-line
+          console.log('XML: ' + this.diagram)
+          this.viewer.importXML(this.diagram, function(err) {
             if (!err) {
               this.viewer.get('renderer').zoom('fit-viewport')
             }
           })
         }
-      }
-      xhttp.open('GET', '../../resources/get_books_memberships/' + event, true)
+      }.bind(this)
+      xhttp.open('GET', 'http://127.0.0.1:3000/models/buyBookMethod1', true)
       xhttp.send()
     },
-    loadDiagram: function () {
+    onFileNameSelected: function(event) {
+      // eslint-disable-next-line
+      console.log("Selector event received: " + event);
+      const url = 'resources/get_books_membership/' + event
+      const self = this
+      const xhttp = new XMLHttpRequest()
+      xhttp.onreadystatechange = function () {
+        if (this.readyState === 4 && this.status === 200) {
+          self.diagram = this.responseText
+          // eslint-disable-next-line
+          console.log('XML: ' + self.diagram)
+          self.viewer.importXML(self.diagram, function(err) {
+            if (!err) {
+              self.viewer.get('renderer').zoom('fit-viewport')
+            }
+          })
+        }
+      }
+      xhttp.open('GET', url, true)
+      xhttp.send()
+    },
+    loadDiagram: function() {
       const diagrams = this.$refs.inputRef.files
 
       var reader = new FileReader()
 
-      reader.onload = (event) => {
+      reader.onload = event => {
         this.diagram = event.target.result
         // BpmnViewer does not play well with the reactive properties of
         // Vue's "watch" of the 'diagram' state variable, so we have to
         // trigger rendering from here :(
-        this.viewer.importXML(this.diagram, function (err) {
+        this.viewer.importXML(this.diagram, function(err) {
           if (!err) {
             this.viewer.get('renderer').zoom('fit-viewport')
           }
