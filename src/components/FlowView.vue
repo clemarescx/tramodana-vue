@@ -10,7 +10,7 @@
           @filename-selected="onFileNameSelected"/>
       </div>
       <div class="input-method">
-        <form @submit=>
+        <form>
           <label for="diagram-url">Select file from URL:</label>
           <input
             id="diagram-url"
