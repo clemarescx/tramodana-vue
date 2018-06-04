@@ -1,20 +1,38 @@
 <template>
   <div id="flowview">
     <h1>Select a workflow diagram</h1>
-    <div>
-      <button @click="test"> test </button>
-      <input
-        id="input"
-        ref="inputRef"
-        type="file"
-        accept=".bpmn"
-        @change="loadDiagram">
-    </div>
     <div id="selectable-view">
-      <file-selector
-        id="selector"
-        :file-list="exampleDiagrams"
-        @filename-selected="onFileNameSelected"/>
+      <div class="input-method">
+        <label>Select file from directory:</label>
+        <file-selector
+          id="selector"
+          :file-list="exampleDiagrams"
+          @filename-selected="onFileNameSelected"/>
+      </div>
+      <div class="input-method">
+        <form @submit=>
+          <label for="diagram-url">Select file from URL:</label>
+          <input
+            id="diagram-url"
+            type="text"
+            name="url-input"
+            value="http://127.0.0.1:3000/models/buyBookMethod1"
+            disabled="true">
+          <input
+            type="submit"
+            value="fetch"
+            @click="onClickFetch">
+        </form>
+      </div>
+      <div class="input-method">
+        <label>Select file from directory:</label>
+        <input
+          id="input"
+          ref="inputRef"
+          type="file"
+          accept=".bpmn"
+          @change="loadDiagram">
+      </div>
       <div id="renderer"></div>
     </div>
     <p>
@@ -53,14 +71,6 @@ export default {
         // eslint-disable-next-line
         console.log('new diagram displayed: ' + this.fileName)
       }
-
-      /*
-        this.viewer.importXML(newDiag, function (err) {
-          if (!err) {
-            this.viewer.get('aggregated-workflow').zoom('fit-viewport')
-          }
-        })
-        */
     }
   },
   created: function () {
@@ -75,12 +85,11 @@ export default {
     })
   },
   methods: {
-    test: async function () {
+    onClickFetch: async function () {
       // eslint-disable-next-line
       console.log("test clicked")
       const url = 'http://127.0.0.1:3000/models/buyBookMethod1'
       await this.$store.dispatch('diagrams/requestJSONFile', url)
-      // const self = this
       // eslint-disable-next-line
       console.log('XML: ' + this.diagram)
       this.viewer.importXML(this.diagram, function (err) {
@@ -89,10 +98,10 @@ export default {
         }
       })
     },
-    onFileNameSelected: async function (event) {
+    onFileNameSelected: async function (name) {
       // eslint-disable-next-line
-      console.log("Selector event received: " + event);
-      const url = '/static/resources/get_books_membership/' + event
+      console.log("Selector event received: " + name);
+      const url = '/static/resources/get_books_membership/' + name
       await this.$store.dispatch('diagrams/requestFile', url)
 
       this.viewer.importXML(this.diagram, function (err) {
@@ -120,16 +129,23 @@ div {
   border: 0.1em solid green;
 }
 
+.input-method {
+  display: grid;
+  grid-template-columns: auto;
+}
+
 #selectable-view {
   display: grid;
-  grid-template-areas: "2em auto auto";
+  justify-content: center;
+  grid-template-columns: auto auto auto;
   grid-gap: 0.5em;
 }
 
 #renderer {
-  width: 50%;
+  width: 100%;
   height: 400px;
-  overflow: auto;
   margin: 0 auto;
+  grid-column: span 3;
+  grid-row: 2;
 }
 </style>

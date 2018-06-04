@@ -24,6 +24,7 @@ const actions = {
     ctx.commit('parseJSON')
   },
   async requestFile(ctx, url) {
+    // eslint-disable-next-line
     console.log(url)
     const result = await new Promise((resolve, reject) => {
       const xhttp = new XMLHttpRequest()
@@ -33,9 +34,10 @@ const actions = {
         }
 
         if (this.status !== 200) {
-          return reject()
+          return reject(new Error('Could not get ', url))
         }
 
+        // eslint-disable-next-line
         console.log(this.responseText)
         resolve(this.responseText)
       }

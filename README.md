@@ -1,30 +1,24 @@
 # tramodana-vue
 
-> A Vue.js project
+A Vue.js client for the Tramodana backend 
 
-## Build Setup
+## Requirements
+
+- NodeJS            (developed on v9.10.1)
+- NPM               (developed on v5.8.0)
+- Docker            (developed on v18.03.1 CE)
+- Docker-Compose    (developed on v1.21.2)
+
+## Running instructions
 
 ``` bash
 # install dependencies
 npm install
 
+# start the JSON database container
+docker-compose up
+
 # serve with hot reload at localhost:8080
-npm run dev
+npm start
 
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
