@@ -170,7 +170,7 @@ after@0.8.2:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
 
-agent-base@4, agent-base@^4.1.0, agent-base@^4.2.0:
+agent-base@4, agent-base@^4.2.0, agent-base@^4.3.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/agent-base/-/agent-base-4.3.0.tgz#8165f01c436009bccad0b1d122f05ed770efc6ee"
   dependencies:
@@ -1149,33 +1149,33 @@ boolbase@^1.0.0, boolbase@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/boolbase/-/boolbase-1.0.0.tgz#68dff5fbe60c51eb37725ea9e3ed310dcc1e776e"
 
-bpmn-font@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/bpmn-font/-/bpmn-font-0.8.0.tgz#85b18715faede345cd33c8a48f50bbe557ff76c2"
+bpmn-font@^0.9.3:
+  version "0.9.3"
+  resolved "https://registry.yarnpkg.com/bpmn-font/-/bpmn-font-0.9.3.tgz#03c2c906dbd30653e5b1f113d92c78cab6710df4"
 
-bpmn-js@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/bpmn-js/-/bpmn-js-1.3.3.tgz#894787a0fafad3977be5097e0bf8adc8961d9a4b"
+bpmn-js@^5.0.4:
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/bpmn-js/-/bpmn-js-5.1.2.tgz#b449d1efa734b4a4faf2f1d865c2254101d7252c"
   dependencies:
-    bpmn-font "^0.8.0"
-    bpmn-moddle "^5.1.5"
+    bpmn-font "^0.9.3"
+    bpmn-moddle "^6.0.0"
     css.escape "^1.5.1"
-    diagram-js "^1.4.0"
-    diagram-js-direct-editing "^1.2.2"
-    ids "^0.2.0"
+    diagram-js "^5.1.1"
+    diagram-js-direct-editing "^1.6.0"
+    ids "^1.0.0"
     inherits "^2.0.1"
-    min-dash "^3.0.0"
+    min-dash "^3.5.1"
     min-dom "^3.0.0"
     object-refs "^0.3.0"
-    tiny-svg "^2.0.0"
+    tiny-svg "^2.2.1"
 
-bpmn-moddle@^5.1.5:
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/bpmn-moddle/-/bpmn-moddle-5.1.6.tgz#98e9d38524a1c8971e3c3404fbba261130887d39"
+bpmn-moddle@^6.0.0:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/bpmn-moddle/-/bpmn-moddle-6.0.5.tgz#e399f688f3304863a79bf87e79624aed71abcde0"
   dependencies:
     min-dash "^3.0.0"
-    moddle "^4.1.0"
-    moddle-xml "^7.2.3"
+    moddle "^5.0.1"
+    moddle-xml "^8.0.6"
 
 brace-expansion@^1.1.7:
   version "1.1.11"
@@ -2157,13 +2157,13 @@ debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.8, debug@^2.6.
   dependencies:
     ms "2.0.0"
 
-debug@3.1.0, debug@^3.1.0, debug@~3.1.0:
+debug@3.1.0, debug@~3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
-debug@3.2.6, debug@^3.2.5, debug@^3.2.6:
+debug@3.2.6, debug@^3.1.0, debug@^3.2.5, debug@^3.2.6:
   version "3.2.6"
   resolved "https://registry.yarnpkg.com/debug/-/debug-3.2.6.tgz#e83d17de16d8a7efb7717edbe5fb10135eee629b"
   dependencies:
@@ -2337,26 +2337,26 @@ di@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/di/-/di-0.0.1.tgz#806649326ceaa7caa3306d75d985ea2748ba913c"
 
-diagram-js-direct-editing@^1.2.2:
-  version "1.4.3"
-  resolved "https://registry.yarnpkg.com/diagram-js-direct-editing/-/diagram-js-direct-editing-1.4.3.tgz#e0110ede67d84eaad58d655cccb719d0bebe8a11"
+diagram-js-direct-editing@^1.6.0:
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/diagram-js-direct-editing/-/diagram-js-direct-editing-1.6.1.tgz#c2a040f7d910631e5c8f178bbc326db3afbd1ae0"
   dependencies:
     min-dash "^3.0.0"
     min-dom "^3.0.0"
 
-diagram-js@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/diagram-js/-/diagram-js-1.4.0.tgz#401c46407348630bc19d6122f35e7100216d8524"
+diagram-js@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/diagram-js/-/diagram-js-5.1.1.tgz#511a41bd5fbe74dd63bb0789d9fb1049aabd054c"
   dependencies:
     css.escape "^1.5.1"
     didi "^4.0.0"
     hammerjs "^2.0.1"
     inherits "^2.0.1"
-    min-dash "^3.0.0"
+    min-dash "^3.5.0"
     min-dom "^3.0.0"
     object-refs "^0.3.0"
     path-intersection "^1.0.2"
-    tiny-svg "^2.0.0"
+    tiny-svg "^2.2.1"
 
 didi@^4.0.0:
   version "4.0.0"
@@ -2675,8 +2675,8 @@ es6-map@^0.1.3:
     event-emitter "~0.3.5"
 
 es6-promise@^4.0.3:
-  version "4.2.4"
-  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.4.tgz#dc4221c2b16518760bd8c39a52d8f356fc00ed29"
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
 
 es6-promisify@^5.0.0:
   version "5.0.0"
@@ -3670,10 +3670,6 @@ hasha@^2.2.0:
     is-stream "^1.0.1"
     pinkie-promise "^2.0.0"
 
-hat@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/hat/-/hat-0.0.3.tgz#bb014a9e64b3788aed8005917413d4ff3d502d8a"
-
 he@1.1.1, he@1.1.x, he@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
@@ -3830,10 +3826,10 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
 
 https-proxy-agent@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.1.tgz#51552970fa04d723e04c56d04178c3f92592bbc0"
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/https-proxy-agent/-/https-proxy-agent-2.2.4.tgz#4ee7a737abd92678a293d9b34a1af4d0d08c787b"
   dependencies:
-    agent-base "^4.1.0"
+    agent-base "^4.3.0"
     debug "^3.1.0"
 
 iconv-lite@0.4.23, iconv-lite@^0.4.17, iconv-lite@^0.4.4:
@@ -3854,11 +3850,9 @@ icss-utils@^4.0.0, icss-utils@^4.1.1:
   dependencies:
     postcss "^7.0.14"
 
-ids@^0.2.0:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/ids/-/ids-0.2.2.tgz#c23140dd06f5e5e95b1a5e5e98877ea734965540"
-  dependencies:
-    hat "^0.0.3"
+ids@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ids/-/ids-1.0.0.tgz#df67f2d37b81d7c2effc87e03d17ebff95a58c05"
 
 ieee754@^1.1.4:
   version "1.1.11"
@@ -4927,6 +4921,10 @@ min-dash@^3.0.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/min-dash/-/min-dash-3.5.0.tgz#9828e9596946ca60b79f06bc4db6a5c324e29ffd"
 
+min-dash@^3.5.0, min-dash@^3.5.1:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/min-dash/-/min-dash-3.5.2.tgz#23786fa289116ba3656038e16511577413d27200"
+
 min-dom@^3.0.0:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/min-dom/-/min-dom-3.1.1.tgz#53440d23d32a0a8bb6b2e657ca4cfd39d998a29a"
@@ -5053,17 +5051,17 @@ mocha@^6.1.4:
     yargs-parser "13.0.0"
     yargs-unparser "1.5.0"
 
-moddle-xml@^7.2.3:
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/moddle-xml/-/moddle-xml-7.4.1.tgz#44149192dd9a94c271a6269671b28b64d88c84ba"
+moddle-xml@^8.0.6:
+  version "8.0.6"
+  resolved "https://registry.yarnpkg.com/moddle-xml/-/moddle-xml-8.0.6.tgz#fb4b2c3f9a0ec95ad3480d8d21e2f74e7212ac30"
   dependencies:
     min-dash "^3.0.0"
-    moddle "^4.1.0"
-    saxen "^8.1.0"
+    moddle "^5.0.1"
+    saxen "^8.1.2"
 
-moddle@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/moddle/-/moddle-4.1.0.tgz#1b49f60dbe6c9565875605555c9fabe661e400b6"
+moddle@^5.0.1:
+  version "5.0.1"
+  resolved "https://registry.yarnpkg.com/moddle/-/moddle-5.0.1.tgz#1e27915d5539fcdad33e6e7ad2acdeacc5ad856c"
   dependencies:
     min-dash "^3.0.0"
 
@@ -6791,9 +6789,9 @@ sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
   resolved "https://registry.yarnpkg.com/sax/-/sax-1.2.4.tgz#2816234e2378bddc4e5354fab5caa895df7100d9"
 
-saxen@^8.1.0:
-  version "8.1.0"
-  resolved "https://registry.yarnpkg.com/saxen/-/saxen-8.1.0.tgz#d2c91cff7fdcc9458600e32a7d1dc504a9c61011"
+saxen@^8.1.2:
+  version "8.1.2"
+  resolved "https://registry.yarnpkg.com/saxen/-/saxen-8.1.2.tgz#e677b32afe93667c9d939d3f3de02e09df108e54"
 
 schema-utils@^0.3.0:
   version "0.3.0"
@@ -7493,9 +7491,9 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
 
-tiny-svg@^2.0.0:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/tiny-svg/-/tiny-svg-2.2.1.tgz#76da261fba736a139a1ef89fa3b50ff4742df232"
+tiny-svg@^2.2.1:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/tiny-svg/-/tiny-svg-2.2.2.tgz#9d9825c2e0ccb5e259bb1ae7d7ac79194e086657"
 
 tmp@0.0.33, tmp@0.0.x, tmp@^0.0.33:
   version "0.0.33"
